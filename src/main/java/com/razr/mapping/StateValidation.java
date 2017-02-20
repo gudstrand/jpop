@@ -7,8 +7,8 @@ import java.util.Set;
 
 public class StateValidation {
 
-	static Map<String, String> states = new HashMap<String, String>();
-	static Set<String> stateCodes = new HashSet<String>();
+	static Map<String, String> states = new HashMap<>();
+	static Set<String> stateCodes = new HashSet<>();
 
 	/* static initializer */
 	static {
@@ -84,7 +84,10 @@ public class StateValidation {
 		states.put("Wyoming", "WY");
 		states.put("Yukon Territory", "YT");
 
-		states.keySet().stream().forEach((state) -> stateCodes.add(states.get(state)));
+		states.keySet().stream().forEach(state -> stateCodes.add(states.get(state)));
+	}
+
+	private StateValidation() {
 	}
 
 	/**

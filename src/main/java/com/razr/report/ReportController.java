@@ -34,6 +34,7 @@ public class ReportController {
 			model.addAttribute("states", report.getStates());
 			return "popreport";
 		} catch (IOException e) {
+			logger.error("Exception Caught in /popreport :", e);
 			throw new ResourceNotFoundException(url);
 		}
 	}

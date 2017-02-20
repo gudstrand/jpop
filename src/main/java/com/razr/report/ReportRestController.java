@@ -24,6 +24,7 @@ public class ReportRestController {
 
 		// check for a jsonl or gz extension, otherwise exit
 		if (!isValid(url)) {
+			logger.error("Invalid Resource {}", url);
 			throw new ResourceInvalidException(url);
 		}
 
@@ -32,11 +33,13 @@ public class ReportRestController {
 			PopulationReport report = service.createPopulationReport(url);
 			return new ReportDTO(report);
 		} catch (IOException e) {
+			logger.error("Resource {} not found ", url);
+			logger.error("Exception is ", e);
 			throw new ResourceNotFoundException(url);
 		}
 	}
 
 	private boolean isValid(String url) {
-		return (url.endsWith(".gz") || url.endsWith(".jsonl"));
+		return url.endsWith(".gz") || url.endsWith(".jsonl");
 	}
 }

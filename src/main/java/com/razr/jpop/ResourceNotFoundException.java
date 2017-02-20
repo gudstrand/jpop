@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "Unable to load resource")
 public class ResourceNotFoundException extends RuntimeException {
 
-	private Logger logger = LoggerFactory.getLogger(ResourceNotFoundException.class);
+	private final transient Logger logger = LoggerFactory.getLogger(ResourceNotFoundException.class);
 
 	public ResourceNotFoundException(String url) {
 		logger.error("Failed to locate resource {}", url);

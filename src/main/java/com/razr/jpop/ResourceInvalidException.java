@@ -10,10 +10,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  */
 @ResponseStatus(value = HttpStatus.NOT_IMPLEMENTED, reason = "Only files of .gz or .jsonl supported")
 public class ResourceInvalidException extends RuntimeException {
-	private Logger logger = LoggerFactory.getLogger(ResourceInvalidException.class);
+	private final transient Logger logger = LoggerFactory.getLogger(ResourceInvalidException.class);
 
 	public ResourceInvalidException(String url) {
-		this.logger = logger;
 		logger.error("Resource URL is not valid: {}", url);
 	}
 }
