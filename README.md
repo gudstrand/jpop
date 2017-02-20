@@ -45,3 +45,10 @@ jpop can also access gzip compressed jsonl resources too if
 they have a .gz extension.  
  
     http://localhost:8080/population?url=https://dl.dropboxusercontent.com/u/7002771/allrecs.jsonl.gz
+
+
+## Web Report
+
+You can also view an online population report here :
+
+	http://localhost:8080/popreport?url=https://dl.dropboxusercontent.com/u/7002771/allrecs.jsonl.gz
