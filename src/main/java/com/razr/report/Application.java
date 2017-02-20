@@ -3,6 +3,9 @@ package com.razr.report;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * Entry point for spring boot application.
+ */
 @SpringBootApplication
 public class Application {
 

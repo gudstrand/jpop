@@ -12,8 +12,7 @@ import java.net.URL;
 import java.util.zip.GZIPInputStream;
 
 /**
- * Utility class to open a reader for a url or optionally returning contents
- * in a List<CityDTO>
+ * Utility class to open a reader for a url
  */
 public class UrlReader {
 

@@ -3,7 +3,7 @@ package com.razr.report;
 import java.util.Set;
 
 /**
- * Created by gary on 2/19/17.
+ * Data transfer object for the REST population report call.
  */
 public class ReportDTO {
 
@@ -34,20 +34,4 @@ public class ReportDTO {
 	public Set<String> getStates() {
 		return states;
 	}
-
-	//	private final long id;
-//	private final String content;
-//
-//	public Greeting(long id, String content) {
-//		this.id = id;
-//		this.content = content;
-//	}
-//
-//	public long getId() {
-//		return id;
-//	}
-//
-//	public String getContent() {
-//		return content;
-//	}
 }

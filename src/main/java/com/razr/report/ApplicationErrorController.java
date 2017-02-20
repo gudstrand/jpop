@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Created by gary on 2/19/17.
+ * Map /error to a less generic page.
  */
 @RestController
 public class ApplicationErrorController implements ErrorController {

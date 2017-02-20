@@ -13,6 +13,9 @@ import java.io.IOException;
 
 @Grab("thymeleaf-spring4")
 
+/**
+ * Creates a web page population report using Thymeleaf and templates.
+ */
 @Controller
 public class ReportController {
 

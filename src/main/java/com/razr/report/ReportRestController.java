@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 
+/**
+ * Spring Boot controller to provide a REST interface to the population report data.
+ */
 @RestController
 public class ReportRestController {
 
