@@ -22,6 +22,16 @@ public class ReportRestController {
 	@RequestMapping(method = RequestMethod.GET, path = "/population")
 	public ReportDTO population(@RequestParam(value = "url", defaultValue = "https://dl.dropboxusercontent.com/u/2436323/cities.jsonl") String url) {
 
+		return getReportDTO(url);
+	}
+
+	@RequestMapping(method = RequestMethod.POST, path = "/population")
+	public ReportDTO populationPOST(@RequestParam(value = "url", defaultValue = "https://dl.dropboxusercontent.com/u/2436323/cities.jsonl") String url) {
+
+		return getReportDTO(url);
+	}
+
+	private ReportDTO getReportDTO(@RequestParam(value = "url", defaultValue = "https://dl.dropboxusercontent.com/u/2436323/cities.jsonl") String url) {
 		// check for a jsonl or gz extension, otherwise exit
 		if (!isValid(url)) {
 			logger.error("Invalid Resource {}", url);
