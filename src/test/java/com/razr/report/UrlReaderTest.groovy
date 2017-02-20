@@ -17,7 +17,8 @@ class UrlReaderTest extends spock.lang.Specification {
             fileAddress = "file:src//test//resources//urlreader//filetest.jsonl"
     @Shared
             filePrefix = "file:src//test//resources//urlreader//"
-
+    @Shared
+            urlcompressed = "https://dl.dropboxusercontent.com/u/7002771/allrecs.jsonl.gz"
 
     @Shared
             reader = new UrlReader()
@@ -64,6 +65,13 @@ class UrlReaderTest extends spock.lang.Specification {
     def "no ending cr"() {
         when:
         List<CityDTO> cities = createList(filePrefix + "noendingcr.jsonl")
+        then:
+        cities.size() == 3
+    }
+
+    def "compresed"() {
+        when:
+        List<CityDTO> cities = createList(urlcompressed)
         then:
         cities.size() == 3
     }

@@ -12,7 +12,7 @@ import java.io.IOException;
 @RestController
 public class ReportController {
 
-	private Logger logger = LoggerFactory.getLogger(UrlReader.class);
+	private Logger logger = LoggerFactory.getLogger(ReportController.class);
 
 	@RequestMapping(method = RequestMethod.GET, path = "/population")
 	public ReportDTO population(@RequestParam(value = "url", defaultValue = "https://dl.dropboxusercontent.com/u/2436323/cities.jsonl") String url) {
@@ -21,7 +21,7 @@ public class ReportController {
 			PopulationReport report = service.createPopulationReport(url);
 			return new ReportDTO(report);
 		} catch (IOException e) {
-			throw new UrlNotFoundException(url);
+			throw new ResourceNotFoundException(url);
 		}
 	}
 }

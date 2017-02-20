@@ -1,25 +1,5 @@
-{
-  "city": "San Antonio",
-  "state": "TX",
-  "population": 1469845
-}
-{
-  "city": "San Diego",
-  "state": "CA",
-  "population": 1394928
-}
-{
-  "city": "Dallas",
-  "state": "TX",
-  "population": 1300092
-}
-{
-  "city": "San Jose",
-  "state": "CA",
-  "population": 1026908
-}
-{
-  "city": "Austin",
-  "state": "TX",
-  "population": 931830
-}
+{"city": "San Antonio", "state": "TX", "population": 1469845}
+{"city": "San Diego", "state": "CA", "population": 1394928}
+{"city": "Dallas", "state": "TX", "population": 1300092}
+{"city": "San Jose", "state": "CA", "population": 1026908}
+{"city": "Austin", "state": "TX", "population": 931830}

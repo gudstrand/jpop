@@ -1,20 +1,4 @@
-{
-  "city": "Badger",
-  "state": "MN",
-  "population": 372
-}
-{
-  "city": "Greenbush",
-  "state": "MN",
-  "population": 717
-}
-{
-  "city": "Strathcona",
-  "state": "MN",
-  "population": 44
-}
-{
-  "city": "Buxton",
-  "state": "ND",
-  "population": 319
-}
+{"city": "Badger", "state": "MN", "population": 372}
+{"city": "Greenbush", "state": "MN", "population": 717}
+{"city": "Strathcona", "state": "MN", "population": 44}
+{"city": "Buxton", "state": "ND", "population": 319}
