@@ -1,4 +1,4 @@
-package com.razr.report;
+package com.razr.jpop;
 
 import org.springframework.boot.autoconfigure.web.ErrorController;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,0 +1,3 @@
+bad codes - https://dl.dropboxusercontent.com/u/7002771/statebadcode.jsonl
+missing - https://dl.dropboxusercontent.com/u/7002771/statecodemissing.jsonl
+to long - https://dl.dropboxusercontent.com/u/7002771/statecodetolong.jsonl

@@ -1,6 +1,7 @@
 package com.razr.mapping;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.razr.jpop.ValidationException;
 
 /**
  * DTO java object used by jackson to parse a jsonl entry into a java object.  Jsonl entry
@@ -33,7 +34,12 @@ public class CityDTO {
 	}
 
 	public void setState(String state) {
-		this.state = state;
+
+		if (StateValidation.isValid(state)) {
+			this.state = state;
+		} else {
+			throw new ValidationException("Invalid state code");
+		}
 	}
 
 	public Integer getPopulation() {

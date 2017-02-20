@@ -1,5 +1,6 @@
 package com.razr.report;
 
+import com.razr.jpop.ResourceNotFoundException;
 import groovy.lang.Grab;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
