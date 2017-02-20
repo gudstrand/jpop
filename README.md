@@ -16,12 +16,20 @@ Example:
 	{"city": "Los Angeles", "state": "CA", "population": 3971883}
  
 ## Build instructions
+### Git clone
 jpop is housed in a GitHub repository.  To clone the application create 
 a directory of your choosing and run the following command (**you must
 have git installed**):
 
 	 git clone git@github.com:gudstrand/jpop.git
 
+### Gradle build
+#### gradlew
+Don't worry if you do not have gradle installed.  cd into the application 
+directory and run gradlew to install gradle. You should only need to do this
+the first time you download jpop.  
+
+#### gradlebootRUn
 Next, to build and launch the webserver cd into the jpop directory and run
 the following gradle command:
 
