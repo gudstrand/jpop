@@ -20,18 +20,20 @@ public class ReportRestController {
 	private Logger logger = LoggerFactory.getLogger(ReportRestController.class);
 
 	@RequestMapping(method = RequestMethod.GET, path = "/population")
-	public ReportDTO population(@RequestParam(value = "url", defaultValue = "https://dl.dropboxusercontent.com/u/2436323/cities.jsonl") String url) {
+	public ReportDTO population(@RequestParam(value = "url", defaultValue = "https://dl.dropboxusercontent.com/u/2436323/cities.jsonl") String url,
+	                            @RequestParam(value = "ignoreErrors", defaultValue = "false") boolean ignoreErrors) {
 
-		return getReportDTO(url);
+		return getReportDTO(url, ignoreErrors);
 	}
 
 	@RequestMapping(method = RequestMethod.POST, path = "/population")
-	public ReportDTO populationPOST(@RequestParam(value = "url", defaultValue = "https://dl.dropboxusercontent.com/u/2436323/cities.jsonl") String url) {
+	public ReportDTO populationPOST(@RequestParam(value = "url", defaultValue = "https://dl.dropboxusercontent.com/u/2436323/cities.jsonl") String url,
+	                                @RequestParam(value = "ignoreErrors", defaultValue = "false") boolean ignoreErrors) {
 
-		return getReportDTO(url);
+		return getReportDTO(url, ignoreErrors);
 	}
 
-	private ReportDTO getReportDTO(@RequestParam(value = "url", defaultValue = "https://dl.dropboxusercontent.com/u/2436323/cities.jsonl") String url) {
+	private ReportDTO getReportDTO(String url, boolean ignoreErrors) {
 		// check for a jsonl or gz extension, otherwise exit
 		if (!isValid(url)) {
 			logger.error("Invalid Resource {}", url);
@@ -40,7 +42,7 @@ public class ReportRestController {
 
 		ReportService service = new ReportService();
 		try {
-			PopulationReport report = service.createPopulationReport(url);
+			PopulationReport report = service.createPopulationReport(url, ignoreErrors);
 			return new ReportDTO(report);
 		} catch (IOException e) {
 			logger.error("Resource {} not found ", url);

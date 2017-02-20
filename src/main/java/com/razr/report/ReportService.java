@@ -21,11 +21,15 @@ public class ReportService {
 	 * @return Collated results as a report
 	 * @throws IOException If we are unable to open the file
 	 */
-	public PopulationReport createPopulationReport(String url) throws IOException {
+	public PopulationReport createPopulationReport(String url, boolean ignoreErrors) throws IOException {
 		BufferedReader br = ureader.createReader(url);
 		PopulationReport report = new PopulationReport();
 		Stream<String> filestream = br.lines();
-		filestream.forEach(json -> mapper.mapAndAdd(report, json));
+		if (ignoreErrors) {
+			filestream.forEach(json -> mapper.mapAndAddIgnoreErrors(report, json));
+		} else {
+			filestream.forEach(json -> mapper.mapAndAdd(report, json));
+		}
 		br.close();
 		return report;
 	}

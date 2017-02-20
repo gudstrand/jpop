@@ -27,7 +27,7 @@ public class ReportController {
 		ReportService service = new ReportService();
 		try {
 
-			PopulationReport report = service.createPopulationReport(url);
+			PopulationReport report = service.createPopulationReport(url, false);
 			model.addAttribute("totalpopulation", report.getTotalPopulation());
 			model.addAttribute("largestpopulation", report.getLargestPopulation());
 			model.addAttribute("mostpopulouscities", report.getMostPopulousCities());

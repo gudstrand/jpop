@@ -24,7 +24,7 @@ class PopulationReportTest extends Specification {
 
     def setup() {
         service = new ReportService()
-        report = service.createPopulationReport(fileAddress)
+        report = service.createPopulationReport(fileAddress, true)
     }
 
     def cleanup() {
@@ -81,7 +81,7 @@ class PopulationReportTest extends Specification {
     def "test error file"() {
         given:
         List<String> expected = ["NY", "IL"]
-        report = service.createPopulationReport(errorFileAddress)
+        report = service.createPopulationReport(errorFileAddress, true)
         when:
         report != null
         then:
@@ -95,7 +95,7 @@ class PopulationReportTest extends Specification {
     def "test same population"() {
         given:
         List<String> expected = ["Greenbush", "Strathcona"]
-        report = service.createPopulationReport(samePopFile)
+        report = service.createPopulationReport(samePopFile, true)
         when:
         report != null
         then:
@@ -106,7 +106,7 @@ class PopulationReportTest extends Specification {
         given:
         List<String> expected = ["New York"]
         List<String> expectedStates = ["CA", "PA", "NY", "AZ", "TX"]
-        report = service.createPopulationReport(mixedcase)
+        report = service.createPopulationReport(mixedcase, true)
         when:
         report != null
         then:

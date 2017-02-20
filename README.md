@@ -11,7 +11,14 @@ fields
 	largestPopulation - The largest population of any city
 	mostPopulousCities - City with largest population.  If there are ties all cities are displayed
 	states - All the distinct states.
+## Report options
+The report accepts two parameters
 	
+	| option       | use                            | default value                                            |
+    |--------------|--------------------------------|----------------------------------------------------------|
+    | url          | url of jsonl datasource        | https://dl.dropboxusercontent.com/u/2436323/cities.jsonl |
+    | ignoreErrors | ignore parsing errors of jsonl | false                                                    |
+    
 ## jsonl format
 Each row contains a json object containing the following fields:
 

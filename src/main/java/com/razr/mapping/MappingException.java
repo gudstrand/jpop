@@ -3,7 +3,7 @@ package com.razr.mapping;
 /**
  * Wrapper for all exceptions that may occur during json mapping
  */
-public class MappingException extends Exception {
+public class MappingException extends RuntimeException {
 	public MappingException() {
 		super();
 	}
