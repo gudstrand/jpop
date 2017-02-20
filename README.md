@@ -81,3 +81,15 @@ they have a .gz extension.
 You can also view an online population report here :
 
 	http://localhost:8080/popreport?url=https://dl.dropboxusercontent.com/u/7002771/allrecs.jsonl.gz
+	
+## POST via curl
+
+JPOP also accepts POST requests.  Below are some examples using curl
+
+### Specify URL
+
+  curl --data "url=https://dl.dropboxusercontent.com/u/7002771/statecodetolong.jsonl" http://localhost:8080/population
+
+### ignoreErrors
+
+  curl --data "url=https://dl.dropboxusercontent.com/u/7002771/statecodetolong.jsonl&ignoreErrors=true" http://localhost:8080/population
