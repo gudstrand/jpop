@@ -24,19 +24,24 @@ have git installed**):
 	 git clone git@github.com:gudstrand/jpop.git
 
 ### Gradle build
-#### gradlew
-Don't worry if you do not have gradle installed.  cd into the application 
-directory and run gradlew to install gradle. You should only need to do this
-the first time you download jpop.  
+To build and launch the webserver cd into the jpop directory and run
+the following gradle command (mak sure to include the "w", it is not 
+a typo!):
 
-#### gradlebootRUn
-Next, to build and launch the webserver cd into the jpop directory and run
-the following gradle command:
-
-	gradle bootRun
+	gradlew bootRun
 
 This command will build and package the server, and launch it on port 8080
 on the localhost.
+
+#### Alternative
+You can also build the application with the command
+
+	gradlew build
+	
+This command will build the application jar.  That can be run with the 
+following commmand
+
+	java -jar jpop-rest-service-0.1.0.jar
 
 ## Using JPOP
 The Jpop REST service accepts only one parameter, that is the url of the 
