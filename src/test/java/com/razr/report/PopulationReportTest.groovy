@@ -14,6 +14,10 @@ class PopulationReportTest extends Specification {
     @Shared
             errorFileAddress = "file:src//test//resources//populationreport//filewitherrors.jsonl"
     @Shared
+            samePopFile = "file:src//test//resources//populationreport//samepopulation.jsonl"
+    @Shared
+            mixedcase = "file:src//test//resources//populationreport//mixedcase.jsonl"
+    @Shared
     PopulationReport report
     @Shared
     ReportService service
@@ -28,9 +32,10 @@ class PopulationReportTest extends Specification {
 
     def "test getMostPopulousCity"() {
         when:
-        String city = report.getMostPopulousCity()
+        Set<String> cities = report.getMostPopulousCities()
         then:
-        city.equals("Greenbush")
+        cities.size() == 1
+        cities.contains("Greenbush")
     }
 
     def "test getLargestPopulation"() {
@@ -68,8 +73,8 @@ class PopulationReportTest extends Specification {
         then:
         report.getStates().size() == 3
         report.getStates().containsAll(expected)
+        report.getMostPopulousCities().contains("Dillon")
         report.getLargestPopulation() == 937
-        report.getMostPopulousCity().equals("Dillon")
         report.getTotalPopulation() == 2389
     }
 
@@ -83,7 +88,29 @@ class PopulationReportTest extends Specification {
         report.getStates().size() == 2
         report.getStates().containsAll(expected)
         report.getLargestPopulation() == 8550405
-        report.getMostPopulousCity().equals("New York")
+        report.getMostPopulousCities().contains("New York")
         report.getTotalPopulation() == 11270951
     }
+
+    def "test same population"() {
+        given:
+        List<String> expected = ["Greenbush", "Strathcona"]
+        report = service.createPopulationReport(samePopFile)
+        when:
+        report != null
+        then:
+        report.getMostPopulousCities().containsAll(expected)
+    }
+
+    def "mixed case"() {
+        given:
+        List<String> expected = ["New York"]
+        List<String> expectedStates = ["CA", "PA", "NY", "AZ", "TX"]
+        report = service.createPopulationReport(mixedcase)
+        when:
+        report != null
+        then:
+        report.getMostPopulousCities().containsAll(expected)
+    }
 }
+

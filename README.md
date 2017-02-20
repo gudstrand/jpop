@@ -3,6 +3,15 @@ jpop is a tomcat based REST service that will open a jsonl url resource
 and generate a population report from the contents.  Once the application 
 is started the service can be accessed via a web browser, curl, wget, etc..
   
+## Report contents
+Data from the jsonl file will be summarized into a report with the following
+fields
+	
+	totalPopulation - The sum of the populations of all citites
+	largestPopulation - The largest population of any city
+	mostPopulousCities - City with largest population.  If there are ties all cities are displayed
+	states - All the distinct states.
+	
 ## jsonl format
 Each row contains a json object containing the following fields:
 

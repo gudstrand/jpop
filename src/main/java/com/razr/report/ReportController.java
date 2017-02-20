@@ -30,7 +30,7 @@ public class ReportController {
 			PopulationReport report = service.createPopulationReport(url);
 			model.addAttribute("totalpopulation", report.getTotalPopulation());
 			model.addAttribute("largestpopulation", report.getLargestPopulation());
-			model.addAttribute("mostpopulouscity", report.getMostPopulousCity());
+			model.addAttribute("mostpopulouscities", report.getMostPopulousCities());
 			model.addAttribute("states", report.getStates());
 			return "popreport";
 		} catch (IOException e) {

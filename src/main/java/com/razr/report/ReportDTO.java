@@ -9,13 +9,13 @@ public class ReportDTO {
 
 	private final long totalPopulation;
 	private final long largestPopulation;
-	private final String mostPopulousCity;
+	private final Set<String> mostPopulousCities;
 	private final Set<String> states;
 
 	public ReportDTO(PopulationReport report) {
 		this.totalPopulation = report.getTotalPopulation();
 		this.largestPopulation = report.getLargestPopulation();
-		this.mostPopulousCity = report.getMostPopulousCity();
+		this.mostPopulousCities = report.getMostPopulousCities();
 		this.states = report.getStates();
 	}
 
@@ -27,8 +27,8 @@ public class ReportDTO {
 		return largestPopulation;
 	}
 
-	public String getMostPopulousCity() {
-		return mostPopulousCity;
+	public Set<String> getMostPopulousCities() {
+		return mostPopulousCities;
 	}
 
 	public Set<String> getStates() {

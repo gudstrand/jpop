@@ -73,7 +73,7 @@ class UrlReaderTest extends spock.lang.Specification {
         when:
         List<CityDTO> cities = createList(urlcompressed)
         then:
-        cities.size() == 3
+        cities.size() == 11
     }
 
 }
